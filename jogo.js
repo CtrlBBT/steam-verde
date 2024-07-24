@@ -10,9 +10,9 @@ const modelo = () => {
     const duracao = prompt("Qual a Duração média de Jogo? (EM HORAS) ");
     const preco = prompt("Qual o Preço do jogo? ");
     const estudio = prompt("Qual o Estúdio do Jogo? ");
-    let sequencia = -1
+    let sequencia = -1;
     if(listarr()) {
-        const sequencia = prompt("Qual é a Sequência do Jogo? Digite 0 se não houver sequência ") - 1;
+        sequencia = prompt("Qual é a Sequência do Jogo? Digite 0 se não houver sequência ") - 1;
     }
 
     if (
@@ -48,7 +48,7 @@ const criar = () => {
 const listar = () => {
     if (jogos.length == 0) {
         console.log("Nenhum jogo cadastrado");
-        return false
+        return false;
     } else {
         jogos.forEach((jogo, indice) => {
             console.log('
@@ -71,17 +71,17 @@ const atualizar = () => {
 
     const indice = prompt("Qual o indice deseja atualizar? ") - 1;
 
-    const jogo = modelo()
+    const jogo = modelo();
 
     if (jogo != undefined && validarindice(indice)) {
-        jogos[indice] = jogo
+        jogos[indice] = jogo;
 
-        console.log("Jogo Atualizado com Sucesso! ")
+        console.log("Jogo Atualizado com Sucesso! ");
     } else {
-        console.log("Falha na Atualização")
+        console.log("Falha na Atualização");
     }
     
-}
+};
 
 const remover = () => {
     if(!listar()) {
@@ -91,9 +91,16 @@ const remover = () => {
     const indice = prompt("Qual o indice deseja remover? ") - 1;
 
     if(validarindice(indice)){
-        jogos.splice(indice, 1)
+        jogos.splice(indice, 1);
         console.log("Jogo Removido com sucesso");
     } else {
         console.log("Falha na remoção");
     }
+};
+
+module.exports = {
+    criar;
+    atualizar,
+    listar,
+    remover
 }
