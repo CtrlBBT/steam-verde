@@ -9,13 +9,13 @@ const {
 
 while(true) {
 
-    console.log('
+    console.log(`
     1. para criar jogo
     2. para listar
     3. para atualizar
     4. para remover
     5. para sair
-    ')
+    `)
 
     const opcao = paseInt(prompt("Escolha uma opção acima: "));
 

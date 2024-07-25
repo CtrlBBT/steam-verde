@@ -51,14 +51,14 @@ const listar = () => {
         return false;
     } else {
         jogos.forEach((jogo, indice) => {
-            console.log('
+            console.log(`
             ${indice + 1}.
             Nome: ${jogo.nome}
             Ano de Lançamento: ${jogo.ano_lancamento}
             Duração: ${jogo.duracao}
             Estudio: ${jogo.estudio}
             Sequência: ${jogo.sequencia}
-            ')
+            `)
         });
         return true
     }
